@@ -1,0 +1,529 @@
+/* --- Basic Setup & Variables (Tamil Nadu Theme) --- */
+:root {
+    --primary-color: #8b0000;       /* Deep Brick Red/Maroon */
+    --secondary-color: #FFD700;     /* Temple Gold for accents */
+    --text-dark: #402f1a;           /* Deep Brown */
+    --text-light: #fff;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Montserrat', sans-serif;
+    --bg-light: #fcfcfc;
+    --bg-gray: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* --- General Style Tweaks for Theme --- */
+.header-logo {
+    height: 45px; 
+    width: auto;
+    /* Optional: Ensure logo is visible on dark hero background */
+    filter: brightness(0) invert(1); 
+}
+
+.cta-button, .widget-cta, .room-link-cta {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.cta-button:hover, .widget-cta:hover, .room-link-cta:hover {
+    background-color: #f7e07e; 
+    border-color: var(--text-dark);
+    /* Subtle lift effect */
+    transform: translateY(-2px); 
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+
+/* --- 1. Header & Navigation --- */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 100;
+    color: var(--text-light);
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a:hover, .nav .active {
+    color: var(--secondary-color);
+}
+
+/* --- 2. Hero Section --- */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('https://picsum.photos/1920/1080?random=1') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    color: var(--text-light);
+    margin-bottom: 50px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+
+/* --- Booking Widget --- */
+.booking-widget {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    max-width: 1000px;
+    z-index: 10;
+    background-color: var(--text-light);
+    box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px 8px 0 0;
+    padding: 20px;
+}
+
+.booking-widget form {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+}
+
+.widget-cta {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-transform: uppercase;
+}
+
+.widget-cta:hover {
+    /* Slightly darker primary color */
+    background-color: #7a0000; 
+}
+
+
+/* --- 3. About Section --- */
+.about-section {
+    padding: 80px 50px;
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+.about-image {
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    width: 60%;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* --- 4. Room List Section (Rooms & Rates) --- */
+.rooms-preview-section {
+    text-align: center;
+    padding: 80px 50px;
+    background-color: var(--bg-gray);
+}
+
+.room-intro-text {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.room-list-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 30px; 
+}
+
+.room-card-list {
+    display: flex;
+    background-color: var(--text-light);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.room-card-list:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.room-img {
+    width: 300px; 
+    height: 200px;
+    min-width: 300px; /* added for responsiveness */
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.room-card-list:hover .room-img {
+    transform: scale(1.05);
+}
+
+.room-details {
+    padding: 20px 30px;
+    text-align: left;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-details h3 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+.room-rate {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin: 15px 0;
+    padding: 5px 0;
+    border-top: 1px solid #eee;
+}
+
+.rate-note {
+    margin-top: 20px;
+    font-style: italic;
+    color: #777;
+}
+
+/* --- 5. Amenities Section (New Styles) --- */
+.amenities-section {
+    padding: 80px 50px;
+    text-align: center;
+    background-color: var(--bg-light);
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.amenity-item {
+    padding: 30px 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.amenity-item i {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.amenity-item h3 {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* --- 6. Testimonial Section (New Styles) --- */
+.testimonial-section {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.testimonial-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-content h2 {
+    color: var(--secondary-color);
+}
+
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.author {
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.review-cta {
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+/* --- 7. Footer (New Styles) --- */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    padding: 50px 50px 20px 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    flex-wrap: wrap;
+}
+
+.footer-block {
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-block h3 {
+    font-family: var(--font-serif);
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.footer-block p, .footer-block li a {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-block i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--text-light);
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* --- 8. Responsiveness --- */
+@media (max-width: 900px) {
+    /* Adjustments for Room Cards */
+    .rooms-preview-section {
+        padding: 60px 30px; 
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header, Hero, Intro Mobile Adjustments */
+    .header {
+        flex-direction: column;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7); 
+        position: relative;
+    }
+    
+    .hero-section {
+        height: auto; 
+        padding-top: 150px; 
+        padding-bottom: 150px;
+    }
+
+    /* ... (rest of your existing media query styles) ... */
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image {
+        width: 80%;
+        max-width: 100%;
+        order: -1; 
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    /* Room List Mobile */
+    .room-card-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .room-img {
+        width: 100%;
+        min-width: 100%;
+        height: 200px;
+    }
+    
+    .room-details {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .room-link-cta {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* Footer Mobile */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-block {
+        width: 100%;
+    }
+    
+    .quick-links ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}
