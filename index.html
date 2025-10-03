@@ -50,15 +50,93 @@
             </form>
         </div>
     </section>
+    <body>
+    <script>
+    const bookingForm = document.querySelector('.booking-widget form');
+    const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+
+    // Check if inputs exist
+    if (checkinInput && checkoutInput) {
+        // Prevent selecting past dates
+        const today = new Date();
+        const todayStr = today.getFullYear() + '-' +
+                         String(today.getMonth() + 1).padStart(2, '0') + '-' +
+                         String(today.getDate()).padStart(2, '0');
+
+        checkinInput.setAttribute('min', todayStr);
+        checkoutInput.setAttribute('min', todayStr);
+
+        bookingForm.addEventListener('submit', function(event) {
+            const checkinDate = new Date(checkinInput.value);
+            const checkoutDate = new Date(checkoutInput.value);
+
+            if (!checkinInput.value || !checkoutInput.value) {
+                alert("Please select both check-in and check-out dates.");
+                event.preventDefault();
+                return;
+            }
+
+            if (checkoutDate <= checkinDate) {
+                alert("Check-out date must be after check-in date.");
+                event.preventDefault();
+                return;
+            }
+
+            // Open Google Form in new tab if dates are valid
+            window.open('YOUR_GOOGLE_FORM_LINK', '_blank');
+            event.preventDefault();
+        });
+    } else {
+        console.error("Check-in or check-out input not found!");
+    }
+</script>
+
+</body>
+</body>
+
 
     <section class="about-section" id="about">
         <h2>About SNDN Hotel</h2>
         <div class="about-content">
-             <img src="images/hotel-exterior.png" alt="Cultural element or hotel exterior" class="about-image">
+             <img src="/home/tvl-010-test/Desktop/java/images/HotalLOGO.png" alt="Cultural element or hotel exterior" class="about-image">
             <div class="about-text">
-                <p>Welcome to SNDN Hotel, where **tradition meets comfort**. We bring you the essence of **Tamil Nadu’s warm hospitality** with modern facilities. Whether you’re looking for a cozy single room, a spacious double room, a family stay, or a grand party hall, we ensure your stay is memorable.</p>
-                <p>Book with us and experience comfort, culture, and care at the **best price**. Your quiet state of mind begins here.</p>
-            </div>
+                <p>Welcome to SNDN Hotel, where tradition meets comfort. We bring you the essence of Tamil Nadu’s warm hospitality with modern facilities. Whether you’re looking for a cozy single room, a spacious double room, a family stay, or a grand party hall, we ensure your stay is memorable.</p>
+                <p>Book with us and experience comfort, culture, and care at the best price. Your quiet state of mind begins here.</p>
+            </div><body>
+    <script>
+    const bookingForm = document.querySelector('.booking-widget form');
+    const checkinInput = document.getElementById('checkin');
+    const checkoutInput = document.getElementById('checkout');
+
+    // Optional: prevent selecting past dates in the picker
+    const todayStr = new Date().toISOString().split('T')[0];
+    checkinInput.setAttribute('min', todayStr);
+    checkoutInput.setAttribute('min', todayStr);
+
+    bookingForm.addEventListener('submit', function(event) {
+        const checkinDate = new Date(checkinInput.value);
+        const checkoutDate = new Date(checkoutInput.value);
+
+        if (!checkinInput.value || !checkoutInput.value) {
+            alert("Please select both check-in and check-out dates.");
+            event.preventDefault();
+            return;
+        }
+
+        if (checkoutDate <= checkinDate) {
+            alert("Check-out date must be after check-in date.");
+            event.preventDefault();
+            return;
+        }
+
+        // Open Google Form in new tab if dates are valid
+        window.open('YOUR_GOOGLE_FORM_LINK', '_blank');
+        event.preventDefault();
+    });
+</script>
+</body>
+
         </div>
     </section>
     
@@ -69,9 +147,7 @@
         <div class="room-list-container">
             
             <div class="room-card-list">
-                <img src="https://images.unsplash.com/photo-1501117716987-c8f3408871c5" 
-     alt="Hotel Exterior" class="about-image">
-
+                <img src="/home/tvl-010-test/Desktop/java/images/single.PNG" alt="Hotel Exterior" class="about-image">
                 <div class="room-details">
                     <h3>Single Room 🛏</h3>
                     <p>Cozy space suitable for **1 person**. Ideal for solo travelers and quick stays.</p>
@@ -81,7 +157,7 @@
             </div>
 
             <div class="room-card-list">
-                 <img src="images/doublePic.png" alt="Spacious Double Room with two beds" class="room-img">
+                 <img src="/home/tvl-010-test/Desktop/java/images/trible.PNG" alt="Spacious Double Room with two beds" class="room-img">
                 <div class="room-details">
                     <h3>Double Room 🛏🛏</h3>
                     <p>Spacious accommodation suitable for **2 people**. Features a double bed and modern comfort.</p>
@@ -91,7 +167,7 @@
             </div>
 
             <div class="room-card-list">
-                 <img src="images/family-room.png" alt="Large Family Room with multiple beds" class="room-img">
+                 <img src="/home/tvl-010-test/Desktop/java/images/family.png" alt="Large Family Room with multiple beds" class="room-img">
                 <div class="room-details">
                     <h3>Family Room 👨‍👩‍👧</h3>
                     <p>Large room suitable for up to **4 people**. Perfect for family visits and extended stays.</p>
@@ -101,7 +177,7 @@
             </div>
 
             <div class="room-card-list party-hall-card">
-                 <img src="images/party-hall.png" alt="Grand hall set up for a celebration" class="room-img">
+                 <img src="/home/tvl-010-test/Desktop/java/images/party.PNG" alt="Grand hall set up for a celebration" class="room-img">
                 <div class="room-details">
                     <h3>Party Hall 🎉</h3>
                     <p>Grand space for **functions & events**. Contact us for capacity and catering details.</p>
